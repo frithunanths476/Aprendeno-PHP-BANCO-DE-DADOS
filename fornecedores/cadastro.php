@@ -20,7 +20,7 @@
         <label for="cpf">CPF</label>
         <input type="text" name="cpf" id="cpf" required placeholder="Informe o CPF do fornecedor">
 
-        <button type="submit">Cadastrar fornecedor</button>
+        <a href="TelaListagemFornecedor.php"><button type="submit" class="btn btn-outline-primary">Cadastrar</button></a>
     </form>
 
     <?php
