@@ -27,8 +27,8 @@
             echo "<td>" .$row['cnpj']. "</td>";
             echo "<td>" .$row['tipoempresa']. "</td>";
             echo "<td>" .$row['cpf']. "</td>";
-            echo '<td><a href=" ">Editar</a></td>';
-            echo '<td><a href=" ">Deletar</a></td>';
+            echo '<td><a href="TelaEditarFornecedor.php?id='.$row['id'].'">Editar</a></td>';
+            echo '<td><a href="ExcluirFornecedor.php?id='.$row['id'].'">Deletar</a></td>';
         }
         echo "</table>";
     }
