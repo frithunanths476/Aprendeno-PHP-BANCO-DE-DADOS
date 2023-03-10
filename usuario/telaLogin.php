@@ -11,7 +11,7 @@
         <input type="password" name="senha" id="senha" required placeholder="Informe a sua senha">
 
         <!-- <a href="../ligacao.php" button type="submit btn btn-outline-primary">Logar</a> -->
-        <a href="../ligacao.php"><button type="submit" class="btn btn-outline-primary">Logar</button></a>
+        <button type="submit" class="btn btn-outline-primary"><a href="../ligacao.php">Logar</a></button>
     </form>
 
     <?php

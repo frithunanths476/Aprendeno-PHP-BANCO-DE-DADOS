@@ -17,7 +17,7 @@
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" required placeholder="Informe a sua senha">
 
-        <a href="TelaListagem.php"><button type="submit" class="btn btn-outline-primary">Cadastrar</button></a>
+        <button type="submit" class="btn btn-outline-primary"><a href="TelaListagem.php">Cadastrar</a></button>
     </form>
 
     <?php
