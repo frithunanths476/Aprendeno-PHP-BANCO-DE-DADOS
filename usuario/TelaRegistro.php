@@ -38,7 +38,10 @@
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $sql = "INSERT INTO usuario(nome,login,email,senha) VALUES (:nome, :login, :email, :senha)";
+            if ($result){
+                die("Usuário já existente");
+            }else {
+                $sql = "INSERT INTO usuario(nome,login,email,senha) VALUES (:nome, :login, :email, :senha)";
             $stmt = $conexao->prepare($sql);
             $stmt->execute([
                 "nome" => $nome,
@@ -55,6 +58,9 @@
 
             //fechar a conexao
             $conexao = null;
+            }
+
+            
         }
     ?>
 
