@@ -28,7 +28,7 @@
         header("Location: TelaListagemFornecedor.php");
         exit();
     }else{
-        die("Dados do formulário não fonecido!");
+        die("Dados do formulário não fornecido!");
     }
 
 ?>

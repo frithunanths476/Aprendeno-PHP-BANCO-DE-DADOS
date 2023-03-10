@@ -3,7 +3,7 @@
     include("../conexao.php");
 
     if (!isset($_GET['id'])){
-        die("ID do usuário não foi fonecido");
+        die("ID do usuário não foi fornecido");
     }
 
     $id = $_GET['id'];
