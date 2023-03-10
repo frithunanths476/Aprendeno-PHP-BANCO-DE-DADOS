@@ -17,6 +17,8 @@
                 <th>CNPJ</th>
                 <th>Tipo Empresa</th>
                 <th>CPF</th>
+                <th>Editar</th>
+                <th>Deletar</th>
             </tr>
         ";
         foreach($resultado as $row){
@@ -29,6 +31,7 @@
             echo "<td>" .$row['cpf']. "</td>";
             echo '<td><a href="TelaEditarFornecedor.php?id='.$row['id'].'">Editar</a></td>';
             echo '<td><a href="ExcluirFornecedor.php?id='.$row['id'].'">Deletar</a></td>';
+            echo "<tr>";
         }
         echo "</table>";
     }
