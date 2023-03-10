@@ -15,5 +15,4 @@
 
     header("Location: TelaListagemFornecedor.php");
     exit;
-
 ?>
