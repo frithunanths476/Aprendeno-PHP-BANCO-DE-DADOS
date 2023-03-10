@@ -22,7 +22,7 @@ if(!$row){
 ?>
 <div class="container">
     <h1>Atualizar dados do fornecedor</h1>
-    <form action="<?php echo "atualizar.php?id={$id}" ?>" method="POST">
+    <form action="<?php echo "atualizarFornecedor.php?id={$id}" ?>" method="POST">
         <input type="hidden" name="id" value="<?php echo $row["id"]?>">
 
         <label for="nome">Nome</label>
