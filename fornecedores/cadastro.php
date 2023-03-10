@@ -34,23 +34,35 @@
             $tipoempresa = $_POST["tipoempresa"];
             $cpf = $_POST["cpf"];
 
-            $sql = "INSERT INTO fornecedores(nome,razaosocial,cnpj,tipoempresa,cpf) VALUES (:nome, :razaosocial, :cnpj, :tipoempresa, :cpf)";
+            $sql = "SELECT * FROM fornecedores WHERE razaosocial = :razao AND cpf = :cpf AND cnpj = :cnpj";
             $stmt = $conexao->prepare($sql);
-            $stmt->execute([
-                "nome" => $nome,
-                "razaosocial" => $razaosocial,
-                "cnpj" => $cnpj,
-                "tipoempresa" => $tipoempresa,
-                "cpf" => $cpf
-            ]);
+            $stmt->bindValue(":razao", $razaosocial);
+            $stmt->bindValue(":cpf", $cpf);
+            $stmt->bindValue(":cnpj", $cnpj);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if($stmt->rowCount() > 0){
-                echo "<div class='sucess'>Fornecedor cadastrado</div>";
-            }else{
-                echo "<div class='error'>Erro ao cadastratar o Fornecedor</div>";
+            if ($row){
+                die("Fornecedor já existente");
+            }else {
+                $sql = "INSERT INTO fornecedores(nome,razaosocial,cnpj,tipoempresa,cpf) VALUES (:nome, :razaosocial, :cnpj, :tipoempresa, :cpf)";
+                $stmt = $conexao->prepare($sql);
+                $stmt->execute([
+                    "nome" => $nome,
+                    "razaosocial" => $razaosocial,
+                    "cnpj" => $cnpj,
+                    "tipoempresa" => $tipoempresa,
+                    "cpf" => $cpf
+                ]);
+
+                if($stmt->rowCount() > 0){
+                    echo "<div class='sucess'>Fornecedor cadastrado</div>";
+                }else{
+                    echo "<div class='error'>Erro ao cadastratar o Fornecedor</div>";
+                }
+
+                $conexao = null;
             }
-
-            $conexao = null;
         }
     ?>
 
