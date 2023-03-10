@@ -46,16 +46,16 @@
   <div class="bg-light p-5 rounded">
     <h1>Usuários</h1>
     <?php
-      $sql= "select count(*) from usuario ";
-      $stmt->execute();
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      $sql= "SELECT COUNT(*) FROM usuario ";
     ?>
     <a class="btn btn-lg btn-primary" href="usuario/TelaListagem.php" role="button">Lista de Usuários &raquo;</a>
   </div>
 
   <div class="bg-light p-5 rounded">
     <h1>Fornecedores</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+    <?php
+      $sql= "SELECT COUNT(*) FROM fornecedores ";
+    ?>
     <a class="btn btn-lg btn-primary" href="fornecedores/TelaListagemFornecedor.php" role="button">Lista de Fornecedores &raquo;</a>
   </div>
 </main>
