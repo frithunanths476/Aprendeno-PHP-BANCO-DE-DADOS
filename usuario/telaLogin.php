@@ -10,7 +10,8 @@
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" required placeholder="Informe a sua senha">
 
-        <button type="submit">Logar</button>
+        <!-- <a href="../ligacao.php" button type="submit btn btn-outline-primary">Logar</a> -->
+        <a href=""><button type="submit" class="btn btn-outline-primary">Logar</button></a>
     </form>
 
     <?php

@@ -40,23 +40,40 @@
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
+
+  <?php
+
+    include("conexao.php");
+  ?>
     
 
 <main class="container">
   <div class="bg-light p-5 rounded">
     <h1>Usuários</h1>
     <?php
-      $sql= "SELECT COUNT(*) FROM usuario ";
+      $sql= "SELECT COUNT(*) as qtde FROM usuario";
+      $stmt = $conexao->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
+    <h1>Quantidade: <?php echo $result["qtde"] ?></h1>
     <a class="btn btn-lg btn-primary" href="usuario/TelaListagem.php" role="button">Lista de Usuários &raquo;</a>
   </div>
 
   <div class="bg-light p-5 rounded">
     <h1>Fornecedores</h1>
     <?php
-      $sql= "SELECT COUNT(*) FROM fornecedores ";
+      $sql= "SELECT COUNT(*) as qtde FROM fornecedores ";
+      $stmt = $conexao->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
+    <h1>Quantidade: <?php echo $result["qtde"] ?></h1>
     <a class="btn btn-lg btn-primary" href="fornecedores/TelaListagemFornecedor.php" role="button">Lista de Fornecedores &raquo;</a>
+  </div>
+
+  <div class="bg-light p-5 rounded">
+    <a class="btn btn-lg btn-primary" href="usuario/telaLogin.php" role="button">SAIR &raquo;</a>
   </div>
 </main>
 
