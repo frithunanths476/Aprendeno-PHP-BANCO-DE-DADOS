@@ -27,7 +27,7 @@
             echo "<td>" .$row['cnpj']. "</td>";
             echo "<td>" .$row['tipoempresa']. "</td>";
             echo "<td>" .$row['cpf']. "</td>";
-            echo '<td><a href=" ">Ediar</a></td>';
+            echo '<td><a href=" ">Editar</a></td>';
             echo '<td><a href=" ">Deletar</a></td>';
         }
         echo "</table>";
@@ -35,13 +35,3 @@
 
     include("../config/rodape.php");
 ?>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
