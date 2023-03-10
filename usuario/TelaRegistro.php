@@ -31,6 +31,13 @@
             $email = $_POST["email"];
             $senha = $_POST["senha"];
 
+            $query = "SELECT * FROM usuario WHERE login = :login and email = :email";
+            $stmt = $conexao->prepare($query);
+            $stmt->bindValue(":login", $login);
+            $stmt->bindValue(":email", $email);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
             $sql = "INSERT INTO usuario(nome,login,email,senha) VALUES (:nome, :login, :email, :senha)";
             $stmt = $conexao->prepare($sql);
             $stmt->execute([

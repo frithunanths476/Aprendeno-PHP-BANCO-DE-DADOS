@@ -25,8 +25,9 @@
             $stmt->bindValue(":login", $login);
             $stmt->bindValue(":senha", $senha);
             $stmt->execute();
-
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            
 
             if($result > 0){
                 header("location: TelaListagem.php");
